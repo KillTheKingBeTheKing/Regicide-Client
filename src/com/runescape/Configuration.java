@@ -1,5 +1,7 @@
 package com.runescape;
 
+import java.io.File;
+
 /**
  * The main configuration for the Client
  * 
@@ -24,8 +26,7 @@ public final class Configuration {
 
 	public static final int CLIENT_VERSION = 3;
 
-	public static final String CACHE_DIRECTORY = "./Cache/";// System.getProperty("user.home") + File.separator +
-															// "OSRSPKV"+CLIENT_VERSION+"/";
+	public static final String CACHE_DIRECTORY = System.getProperty("user.home") + File.separator + ".RegicideCache/";
 
 	public static boolean JAGCACHED_ENABLED = false;
 
