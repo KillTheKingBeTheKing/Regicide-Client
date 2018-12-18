@@ -1,7 +1,5 @@
 package com.runescape;
 
-import java.io.File;
-
 /**
  * The main configuration for the Client
  * 
@@ -18,15 +16,16 @@ public final class Configuration {
 	 */
 	public static boolean client_debug = true;
 
-	public static String FILE_SERVER_ADDRESS = "localhost"; // 108.61.41.186 localhost
-	public static String SERVER_ADDRESS = "localhost"; // 108.61.41.186 localhost
+	public static String FILE_SERVER_ADDRESS = "localhost"; // 162.252.11.146 localhost
+	public static String SERVER_ADDRESS = "localhost"; // 162.252.11.146 localhost
 
 	public static int SERVER_PORT = 43595;
 	public static int FILE_SERVER_PORT = 43596;
 
-	public static final int CLIENT_VERSION = 3;
+	public static final int CLIENT_VERSION = 1;
 
-	public static final String CACHE_DIRECTORY = System.getProperty("user.home") + File.separator + ".RegicideCache/";
+	public static final String CACHE_DIRECTORY = "./Cache/";// System.getProperty("user.home") + File.separator +
+															// "OSRSPKV"+CLIENT_VERSION+"/";
 
 	public static boolean JAGCACHED_ENABLED = false;
 

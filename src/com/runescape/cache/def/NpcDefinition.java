@@ -282,21 +282,27 @@ public final class NpcDefinition {
 	}
 
 	public NpcDefinition morph() {
-		int child = -1;
-		if (varBitID != -1) {
-			VariableBits varBit = VariableBits.varbits[varBitID];
-			int variable = varBit.getSetting();
-			int low = varBit.getLow();
-			int high = varBit.getHigh();
-			int mask = Client.BIT_MASKS[high - low];
-			child = clientInstance.settings[variable] >> low & mask;
-		} else if (settingId != -1)
-			child = clientInstance.settings[settingId];
-		if (child < 0 || child >= childrenIDs.length
-				|| childrenIDs[child] == -1)
-			return null;
-		else
-			return lookup(childrenIDs[child]);
+		try {
+			int child = -1;
+			if (varBitID != -1) {
+				VariableBits varBit = VariableBits.varbits[varBitID];
+				int variable = varBit.getSetting();
+				int low = varBit.getLow();
+				int high = varBit.getHigh();
+				int mask = Client.BIT_MASKS[high - low];
+				child = clientInstance.settings[variable] >> low & mask;
+			} else if (settingId != -1)
+				child = clientInstance.settings[settingId];
+			if (child < 0 || child >= childrenIDs.length
+					|| childrenIDs[child] == -1)
+				return null;
+			else
+				return lookup(childrenIDs[child]);
+		} catch(Exception e) {
+			
+		}
+		return null;
+		
 	}
 
 	public static void init(FileArchive archive) {		
